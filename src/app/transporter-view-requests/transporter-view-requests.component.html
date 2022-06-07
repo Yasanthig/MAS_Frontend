@@ -1,0 +1,41 @@
+
+
+<div class="row">
+    <div class="col-3">
+      <app-dashboard></app-dashboard>
+    </div>
+    <div class="col-9">
+
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Req Number</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+            <th scope="col">Available Drivers</th>
+            <th scope="col">Available Vehicles</th>
+            <th scope="col">Assign</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of searchedRequests">
+            <th scope="row" [(ngModel)]="reqId" ng-value="reqId=u._id">{{u._id}}</th>
+            <td>{{u.status}}</td>
+            <td><button class="btn btn-danger" routerLink="/view-request-details" (click)="getId(u._id)">Click to View</button></td>
+            <td scope="row">
+              <select #mySelect (click)="onOptionsSelectedDrivers(u.dateOfTrip)" name="Kategori" id="Kategori" [(ngModel)]="driver" class="ms-1 d-block w-100" required>      
+                <option value="">Click Here</option>
+                <option *ngFor="let i of driverList"  [ngValue]="i.name">{{i.name}}</option>
+            </select> 
+            </td>
+            <td>
+              <select (click)="onOptionsSelectedVehicles(u.dateOfTrip)" name="Kategori" id="Kategori" [(ngModel)]="vehicle" class="ms-1 d-block w-100" required>
+                <option *ngFor="let j of vehicleList"  [ngValue]="j.number">{{j.type}} ({{j.number}}) 
+              </option>
+            </select>
+            </td>
+            <td><button (click)="assignRequest(u._id, driver, vehicle)" class="btn btn-success">Confirm</button></td>
+          </tr>
+        </tbody>
+      </table>
+      

@@ -1,0 +1,94 @@
+
+  <div id="sidebar">
+    <header>
+      <img src="https://iconape.com/wp-content/files/eo/277350/svg/277350.svg" id="icon" alt="User Icon" />
+    </header>
+    <ul class="nav">
+      <li *ngIf="_auth.mngLoggedIn()">
+        <a routerLink="/view-all-request">
+          <i class="zmdi zmdi-view-dashboard"></i> View request
+        </a>
+        <br>
+      <br>
+      </li>
+      <li *ngIf="_auth.TransportMngLoggedIn()">
+        <a routerLink="/transport-view-requests">
+          <i class="zmdi zmdi-view-dashboard"></i> View request
+        </a>
+        <br>
+      <br>
+      </li>
+      <li *ngIf="_auth.DriverLoggedIn()">
+        <a routerLink="/driver-view-requests">
+          <i class="zmdi zmdi-view-dashboard"></i> View request
+        </a>
+        <br>
+      <br>
+      </li>
+      
+      <li *ngIf="_auth.mngLoggedIn() || _auth.empLoggedIn()">
+        <a routerLink="/request">
+          <i class="zmdi zmdi-view-dashboard"></i> Add request
+        </a>
+      <br><br>
+      </li>
+      
+      <li *ngIf="_auth.empLoggedIn()">
+        <a routerLink="/statusrequest">
+          <i class="zmdi zmdi-link"></i> Status of request
+        </a>
+      </li>
+      <br>
+      <br>
+
+      <li>
+        <a routerLink="/notification">
+          <i class="zmdi zmdi-calendar"></i> Notifications
+        </a>
+        <br>
+        <br>
+      </li>
+
+      <li>
+        <a routerLink="/vehicle-list" *ngIf="_auth.TransportMngLoggedIn()">
+          <i class="zmdi zmdi-calendar"></i> View Vehicles
+        </a>
+        <br>
+        <br>
+      </li>
+
+      <li>
+        <a routerLink="/drivers-list" *ngIf="_auth.TransportMngLoggedIn()">
+          <i class="zmdi zmdi-calendar"></i> View Drivers
+        </a>
+        <br>
+        <br>
+      </li>
+
+
+      <li>
+        <a routerLink="/edit-profile">
+          <i class="zmdi zmdi-settings"></i>Update profile
+        </a>
+        <br>
+        <br>
+      </li>
+
+      <li>
+        <a routerLink="/accepted-requests" *ngIf="_auth.DriverLoggedIn()">
+          <i class="zmdi zmdi-settings"></i>View Accepted Requests
+        </a>
+        <br>
+        <br>
+      </li>
+      
+      <li>
+          <button class="btn btn-light" (click)="_auth.logoutUser()">Log out</button>
+        <br>
+        <br>
+      </li>
+    </ul>
+  </div>
+
+ 
+

@@ -1,0 +1,118 @@
+<div class="row">
+  <div class="col-3">
+    <app-dashboard></app-dashboard>
+  </div>
+  <div class="col-9">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/3da5cff3a5.js" crossorigin="anonymous"></script>
+
+    <body>
+      <div class="container w-50 border mt-5 " id="form">
+        <form class="mt-5">
+          <div class="mb-3">
+            <label for="UrunID" class="form-label">Reason*</label>
+            <input type="text" class="form-control" id="UrunID" aria-describedby="" [(ngModel)]="empRequest.reason"
+              [ngModelOptions]="{standalone: true}" required>
+          </div>
+          <div class="mb-3">
+            <label for="UrunAdi" class="form-label">Date of Trip*</label>
+            <input type="date" class="form-control" id="UrunAdi" required placeholder="Select Time"
+              [(ngModel)]="empRequest.dateOfTrip" [ngModelOptions]="{standalone: true}">
+            <input type="time" class="form-control" id="UrunAdi" required placeholder="Select Time"
+              [(ngModel)]="empRequest.timeOfTrip" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="UrunMiktar">From*</label>
+            <input ngx-google-places-autocomplete (onAddressChange)="From($event)" type="text" class="form-control" id="UrunMiktar" required 
+            >
+              <p>From: {{ userAddressFrom }}</p>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="UrunMiktar">To*</label>
+            <input ngx-google-places-autocomplete (onAddressChange)="To($event)" type="text" class="form-control" id="UrunMiktar" required 
+             >
+              <p>To: {{ userAddressTo }}</p>
+              <button type="button" class="btn btn-light" (click)="setRoutePolyline()">Get Route</button>
+             
+             
+          </div>
+          <div class="mb-3">
+          <agm-map style="height:300px ; width: 100%;" [latitude]="latitude" [longitude]="longitude" (mapClick)="mapClicked($event)"
+          (mapRightclick)="removeLastMarker()" >
+          <agm-marker *ngFor="let m of markerPositions"  [markerDraggable]="true" #marker [latitude]="m.lat"
+            [longitude]="m.lng" ></agm-marker>
+    
+          <agm-direction *ngIf="dir" [origin]="dir.origin" [destination]="dir.destination"></agm-direction>
+        </agm-map>
+        <p>Distance: {{distance}} </p>
+        <p>Time: {{time}} </p>
+      </div>
+          <div class="mb-3">
+            <label for="Kategori" class="form-label">Type of Vehicle</label>
+            <select name="Kategori" id="Kategori" class="ms-1 d-block w-100" required
+              [(ngModel)]="empRequest.vehicleType" [ngModelOptions]="{standalone: true}">
+              <option></option>
+              <option value="threeWheel">Three-Wheel</option>
+              <option value="car">Car</option>
+              <option value="van">Van</option>
+            </select>
+          </div>
+          <div class="d-flex justify-content-center">
+            <button type="submit" (click)="sendRequest()"
+              class="btn btn-danger text-white btn-outline-success form-control w-50 m-3"
+              id="ekleButton">Submit</button>
+          </div>
+
+        </form>
+      </div>
+      <script src="scripts.js"></script>
+      <!-- directions Part -->
+      <!-- <div class="container">
+        <input ngx-google-places-autocomplete (onAddressChange)="From($event)" />
+  
+        <p>To: {{ userAddressFrom }}</p>
+  
+      </div>
+  
+      <div class="container">
+        <input ngx-google-places-autocomplete (onAddressChange)="To($event)" />
+  
+        <p>From: {{ userAddressTo }}</p>
+  
+      </div>
+      <button type="button" (click)="getDirection()">Get</button> -->
+  
+  
+  
+      <!-- <agm-map style="height:800px ; width: 700px;" [latitude]="latitude" [longitude]="longitude" (mapClick)="mapClicked($event)"
+        (mapRightclick)="removeLastMarker()" >
+        <agm-marker *ngFor="let m of markerPositions"  [markerDraggable]="true" #marker [latitude]="m.lat"
+          [longitude]="m.lng" ></agm-marker>
+  
+        <agm-direction *ngIf="dir" [origin]="dir.origin" [destination]="dir.destination"></agm-direction>
+  
+      </agm-map> -->
+   
+     
+     
+  
+  
+  
+
+  
+    </body>
+
+    <!--
+<h1> Your current location is: <h1>
+  <agm-map style="height:500px"  [latitude]="lat" [longitude]="lng" (mapClick)="addMarker($event)"(mapMousemove)="move($event)" (mapRightclick)="removeLastMarker()" >
+    <agm-marker [latitude]="lat" [longitude]="lng"  #marker *ngFor="let markerPosition of markerPositions" ></agm-marker>
+  </agm-map>
+
+-->
+
+ 
+
+
+ 

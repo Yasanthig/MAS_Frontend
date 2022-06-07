@@ -1,0 +1,171 @@
+
+<body>
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Employee Number <b style="color:red">*</b></span>
+            <input formControlName="empNumber" id="empNumber" type="text" placeholder="Employee Number"
+              class="form-control" required>
+            <div *ngIf="f['empNumber'].touched && f['empNumber'].invalid" class="alert alert-danger">
+              <div *ngIf="f['empNumber'].errors && f['empNumber'].errors['required']">Employee Number is required.</div>
+
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Username <b style="color:red">*</b></span>
+            <input formControlName="username" id="username" type="text" placeholder="Username" class="form-control"
+              required>
+            <div *ngIf="f['username'].touched && f['username'].invalid" class="alert alert-danger">
+              <div *ngIf="f['username'].errors && f['username'].errors['required']">Username is required.</div>
+
+            </div>
+          </div>
+
+          <div class="input-box">
+            <span class="details">First Name <b style="color:red">*</b></span>
+            <input formControlName="firstName" id="firstName" type="text" class="form-control" placeholder="First Name">
+            <div *ngIf="f['firstName'].touched && f['firstName'].invalid" class="alert alert-danger">
+              <div *ngIf="f['firstName'].errors && f['firstName'].errors['required']">firstName is required.</div>
+              <div *ngIf="f['firstName'].errors && f['firstName'].errors['minlength']">first Name should be 3 character.
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Last Name <b style="color:red">*</b></span>
+            <input formControlName="lastName" id="lastName" type="text" placeholder="Last Name" class="form-control">
+            <div *ngIf="f['lastName'].touched && f['lastName'].invalid" class="alert alert-danger">
+              <div *ngIf="f['lastName'].errors && f['lastName'].errors['required']">lastName is required.</div>
+              <div *ngIf="f['lastName'].errors && f['lastName'].errors['minlength']">lastName should be 3 character.
+              </div>
+            </div>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Email<b style="color:red">*</b></span>
+
+            <input formControlName="email" id="email" type="text" class="form-control" placeholder="email">
+            <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+              <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
+              <div *ngIf="f['email'].errors && f['email'].errors['email']">Please, enter valid email address.</div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Department<b style="color:red">*</b></span>
+            <!-- <input formControlName="department" id="department" type="text" placeholder="Department"
+              class="form-control"> -->
+              <select [ngModel]="department"  #mySelect
+              (change)='onOptionsSelected(mySelect.value)' class="form-control" formControlName="department" id="department" class="ms-1 d-block w-100" required [(ngModel)]="department">
+                <option></option>
+                  <option value="IT">IT</option>
+                  <option value="Financial">Financial</option>
+                  <option value="Accounting">Accounting</option>
+                  <option value="Transportation">Transportation</option>
+
+            </select>
+            <div *ngIf="f['department'].touched && f['department'].invalid" class="alert alert-danger">
+              <div *ngIf="f['department'].errors && f['department'].errors['required']">Department is required.</div>
+            </div>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Immediate Supervisor Name <b style="color:red">*</b></span>
+          <!--  <input formControlName="supervisorName" id="supervisorName" type="text"
+              placeholder="Immediate Supervisor Name" class="form-control">
+-->
+<select formControlName="supervisorName" id="supervisorName"  >
+  <option value="">Select Supervisor</option>
+              <option class='option'  *ngFor='let option of managerList' 
+              [value]="option.username">{{option.username}}</option>
+              <option class='option' 
+              value="dammika">dammika</option>
+
+            </select> 
+
+            <div *ngIf="f['supervisorName'].touched && f['supervisorName'].invalid" class="alert alert-danger">
+              <div *ngIf="f['supervisorName'].errors && f['supervisorName'].errors['required']">supervisor Name is
+                required.</div>
+              <div *ngIf="f['supervisorName'].errors && f['supervisorName'].errors['minlength']">supervisor Name should
+                be 10 character.</div>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Position <b style="color:red">*</b></span>
+            <input formControlName="position" id="position" type="text" placeholder="Position" class="form-control">
+            <div *ngIf="f['position'].touched && f['position'].invalid" class="alert alert-danger">
+              <div *ngIf="f['position'].errors && f['position'].errors['required']">Position is required.</div>
+
+            </div>
+          </div>
+
+          <div class="input-box">
+            <span class="details">NIC Number<b style="color:red">*</b></span>
+            <input formControlName="NICNumber" id="NICNumber" type="text" placeholder="NICNumber" class="form-control">
+            <div *ngIf="f['NICNumber'].touched && f['NICNumber'].invalid" class="alert alert-danger">
+              <div *ngIf="f['NICNumber'].errors && f['NICNumber'].errors['required']">NICNumber is required.</div>
+              <div *ngIf="f['NICNumber'].errors && f['NICNumber'].errors['minlength']">NICNumber should be 10 character.
+              </div>
+            </div>
+
+          </div>
+          <div class="input-box">
+            <span class="details">Mobile Number <b style="color:red">*</b></span>
+            <input formControlName="mobile" id="mobile" type="text" placeholder="Mobile" class="form-control">
+            <div *ngIf="f['mobile'].touched && f['mobile'].invalid" class="alert alert-danger">
+              <div *ngIf="f['mobile'].errors && f['mobile'].errors['required']">Mobile number is required.</div>
+              <div *ngIf="f['mobile'].errors && f['mobile'].errors['minlength']">Mobile number should be 10 character.
+              </div>
+            </div>
+          </div>
+
+
+          <div class="input-box">
+            <span class="details">Password <b style="color:red">*</b></span>
+            <input formControlName="password" id="password" type="password" placeholder="password" class="form-control">
+            <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+              <div *ngIf="f['password'].errors && f['password'].errors['required']"> password required.</div>
+              <div *ngIf="f['password'].errors && f['password'].errors['minlength']">password should be 8 character.
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="input-box">
+            <span class="details">Confirm Password <b style="color:red">*</b></span>
+            <input formControlName="confirmPassword" id="confirmPassword" type="password" placeholder="confirmPassword"
+              class="form-control">
+              <div *ngIf="f['confirmPassword'].touched && f['confirmPassword'].invalid" class="alert alert-danger">
+                <div *ngIf="f['confirmPassword'].errors && f['confirmPassword'].errors['required']"> confirm Password required.</div>
+             <div *ngIf="f['confirmPassword'].errors && f['confirmPassword'].errors['mustMatch']">Password should be same as Confirm password</div>
+
+            </div>
+     </div>
+     </div>
+
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+
+      <div>
+
+        <h5 style="color: rgb(8, 8, 8);text-align:justify;margin-left: 100px;"> Already you an account? <a
+            routerLink="/login" class="login"><b style="color:blue;">Login</b></a></h5>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</body>
+
+

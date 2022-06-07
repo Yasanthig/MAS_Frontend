@@ -1,0 +1,24 @@
+<!------ Include the above in your HEAD tag ---------->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+           <h4 id="login">Login</h4>
+    <!-- Login Form -->
+    <img src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/042017/untitled-1_17.png?itok=BAFMQNCO" id="icon" alt="User Icon" />
+    <form>
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="email" [(ngModel)]="loginUserData.email">
+      <input type="password" id="password" class="fadeIn third" name="login" placeholder="password" [(ngModel)]="loginUserData.password">
+      <input type="submit" class="fadeIn fourth" value="Log In" (click)="loginUser()">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" routerLink="/forgetpassword">Forgot Password?</a>
+    </div>
+    <div style="text-align: center; padding: 10px;">
+      <label>Don't have an account yet? </label><a routerLink="/register" class="register">Register</a>
+  </div>
+  </div>
+</div>

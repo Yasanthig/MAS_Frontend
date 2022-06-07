@@ -1,0 +1,177 @@
+<div class="wrapper">
+    <header>
+       <nav>
+        <div class="logo">
+        <img src="https://iconape.com/wp-content/files/eo/277350/svg/277350.svg" id="icon" alt="User Icon" />
+        </div>
+        <div class="menu">
+  <ul>
+  <li>
+   <a routerLink="/about" routerLinkActive="active">About Us</a>
+  </li>
+  
+  
+  <li>
+   <a routerLink="/contact-us" routerLinkActive="active">Feed Back</a>
+  </li>
+
+   <li>
+   <a class="nav-link" routerLink="/login" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+     Login
+   </a>
+  </li>
+  
+  
+  <li>
+   <a class="nav-link"  routerLink="/register" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     Register
+   </a>
+
+  
+  </li>
+  
+  
+  
+  
+  </ul>
+  
+  </div>
+  </nav>
+  </header>
+  </div>
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="https://www.masholdings.com/wp-content/uploads/2022/04/directors-collage3-1536x864-1.png" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://www.innovationintextiles.com/uploads/13937/MAS3.jpg" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://www.innovationintextiles.com/uploads/13937/MAS2.jpg" alt="Third slide">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  
+  
+  
+  <!--our services part-->
+  <div class="intro">
+  <div class='container-fluid mx-auto mt-5 mb-5 col-12' style="text-align: center">
+      <div class="hd">Why Choose Us ?</div><br>
+      <p><small class="text-muted">A GLOBAL PRESENCE. <br /> A UNIVERSAL MINDSET.</small></p>
+      <div class="row" style="justify-content: center">
+          <div class="card col-md-3 col-12">
+              <div class="card-content">
+                  <div class="card-body"> <img class="img" src="https://i.imgur.com/S7FJza5.png" />
+                      <div class="shadow"></div>
+                      <div class="card-title"> We are Inovative </div>
+                      <div class="card-subtitle">
+                          <p> <small class="text-muted">We innovate human-centric products, platform technologies and concept to delivery solutions, for the unmet needs of today and the unknown needs of tomorrow.
+                            Today, our capabilities have evolved from beyond a contract manufacturer to an innovator of apparel solutions, right from concept to doorstep. Our disruptive nature enables efficient processes, breakthrough products and versatile logistic solutions.</small> </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="card col-md-3 col-12 ml-2">
+              <div class="card-content">
+                  <div class="card-body"> <img class="img" src="https://i.imgur.com/xUWJuHB.png" />
+                      <div class="card-title"> Our Goal </div>
+                      <div class="card-subtitle">
+                          <p> <small class="text-muted">To be changemakers is in the DNA of MAS; and we have a plan to create that change. Reimagining a future beyond our lifetime, we are changing the way we approach apparel manufacturing in its entirety. Our collective effort to be sustainable is now pivotal to our growth. Today this commitment is embodied in a tangible and target-oriented PLAN FOR CHANGE.
+                            The Plan For Change is our commitment to inspire sustainable change within our business, and among our customers, people, communities and environment.                             </small> </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="card col-md-3 col-12 ml-2">
+              <div class="card-content">
+                  <div class="card-body"> <img class="img rck" src="https://i.imgur.com/rG3CGn3.png" />
+                      <div class="card-title"> Doing the right thing </div>
+                      <div class="card-subtitle">
+                        
+                          <p> <small class="text-muted">​'Doing the right thing' is in the very essence of our DNA. The cornerstones of this foundation are values; honesty and integrity, trust and mutual respect, freedom with accountability, humility, passion for excellence, entrepreneurial & innovative, and giving back, that together create the distinctive MAS culture.
+                            The MAS DNA is our Code of Conduct that defines the values, principles and key policies that guide our interactions with all stakeholders and create a respectful, inclusive and open workplace.​
+    </small> </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="ft">
+          <p class="chk"><small class="text-muted">Wants to know more?</small></p>
+          <div class="btn btn-primary" routerLink="/about">Read About Us</div>
+      </div>
+  </div>
+  </div>
+  
+  <!--
+  
+  <div
+  class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm fixed-top">
+  <h5 class="my-0 mr-md-auto font-weight-normal">Angular Mean Auth</h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+  <a *ngIf="this.authService.isLoggedIn"  class="p-2 text-dark">User Profile</a>
+  <a *ngIf="!this.authService.isLoggedIn" class="p-2 text-dark" routerLinkActive="active" routerLink="/log-in">Sign
+  in</a>
+  </nav>
+  <a *ngIf="!this.authService.isLoggedIn" class="btn btn-outline-primary" routerLinkActive="active"
+  routerLinkActive="active" routerLink="/sign-up">Sign up</a>
+  <button (click)="logout()" *ngIf="this.authService.isLoggedIn" type="button" class="btn btn-danger">Logout</button>
+  </div>
+  
+  <router-outlet></router-outlet>
+  
+  
+  -->
+  
+  <footer class="footer-section bg-with-black">
+   <div class="footer-top-section">
+       <div class="container">
+           <div class="row">
+               <div class="col-md-5 col-sm-6 col-xs-12">
+                   <div class="single-fta">
+                       <img src="https://iconape.com/wp-content/files/eo/277350/svg/277350.svg" width="230" height="70" alt="">
+                   
+                    </div>
+                   
+               </div>
+               <p class="describe">MAS Holdings, the largest apparel tech company in South Asia, is a leading concept-to-delivery solution provider in apparel and textile manufacturing, sought after by the world's leading brands.</p>
+
+           </div>
+       </div>
+   </div>
+   <div class="footer-bottom-area">
+       <div class="container">
+           <div class="row">
+               <div class="col-xs-12">
+                   <div class="footer-bottom">
+                       <div class="row">
+                           <div class="col-md-15 col-sm-12 col-xs-12">
+                               <div class="fba-copyright">
+                                   <p>© 2022 MAS-Transport-System. All rights reserved.</p>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+  </footer>
+  
+  

@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-3">
+    <app-dashboard></app-dashboard>
+  </div>
+  <div class="col-9" style="margin-left: 280px;">
+
+    <div class="container-xl px-4 mt-4">
+      <div class="row">
+          <div class="col-xl-4">
+              <div class="card mb-4 mb-xl-0">
+                  <div class="card-header">Profile Picture</div>
+                  <div class="card-body text-center">
+                      <img width="200px" height="250px" class="img-account-profile rounded-circle mb-3" [src]="userImage.data.image" alt="">
+                      <input   (change)="onFileSelect($event)" formControlName="image" type="file" accept="image/gif, image/jpeg,image/png" required />
+                      <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                      <button  class="btn btn-success" type="button" (click)="uploadImage()">Upload</button>
+                   
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-8">
+              <div class="card mb-4">
+                  <div class="card-header">Account Details</div>
+                  <div class="card-body">
+                          <div class="row gx-3 mb-3">
+                              <div class="col-md-6">
+                                  <label class="small mb-1" for="inputFirstName" >First name</label>
+
+                                  <input class="editInputs" [(ngModel)]="editedUserData.firstName" id="inputFirstName" type="text" placeholder="{{userData.firstName}}" [ngModelOptions]="{standalone: true}">
+                                 
+
+                              </div>
+                              <div class="col-md-6">
+                                  <label class="small mb-1" for="inputLastName">Last name</label>
+                                  <input class="editInputs" id="inputLastName" type="text" [(ngModel)]="editedUserData.lastName" placeholder="{{userData.lastName}}" [ngModelOptions]="{standalone: true}">
+                              </div>
+                          </div>
+                          <div class="mb-3">
+                            <label class="small mb-1" for="inputUsername">Position</label>
+                            <input class="editInputs" id="Position" type="text" [(ngModel)]="editedUserData.position" placeholder="{{userData.position}}" [ngModelOptions]="{standalone: true}">
+                        </div>
+                          <div class="row gx-3 mb-3">
+                              <div class="col-md-6">
+                                  <label class="small mb-1" for="inputOrgName">Department name</label>
+                                  <input class="editInputs" id="department" type="text" [(ngModel)]="editedUserData.department" placeholder="{{userData.department}}" [ngModelOptions]="{standalone: true}">
+                              </div>
+                              <div class="col-md-6">
+                                  <label class="small mb-1" for="inputLocation">Immediate Supervisor Name</label>
+                                  <input class="editInputs" id="supervisorName" type="text" [(ngModel)]="editedUserData.supervisorName" placeholder="{{userData.supervisorName}}" [ngModelOptions]="{standalone: true}">
+                              </div>
+                          </div>
+                          <div class="mb-3">
+                              <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                              <input class="editInputs" id="inputEmailAddress" type="email" [(ngModel)]="editedUserData.email" placeholder="{{userData.email}}" [ngModelOptions]="{standalone: true}">
+                          </div>
+                          <div class="row gx-3 mb-3">
+                              <div class="col-md-6">
+                                  <label class="small mb-1" for="inputPhone">Phone number</label>
+                                  <input class="editInputs" id="mobile" type="tel" [(ngModel)]="editedUserData.mobile" placeholder="{{userData.mobile}}" [ngModelOptions]="{standalone: true}">
+                              </div>
+                          </div>
+                          <button class="btn btn-primary" type="button" (click)="updateUser()">Save changes</button>
+                      
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>

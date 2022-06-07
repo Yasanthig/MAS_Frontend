@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-3">
+      <app-dashboard></app-dashboard>
+    </div>
+    <div class="col-9" style="margin-left: 350px;">
+
+<div class="card-header" style="text-align: center;background-color: rgb(238, 41, 41);"><b>VEHICLE DETAILS UPLOAD ... </b></div>
+<div class="card-body text-center">
+ <div class="card">
+
+    <form [formGroup]="form" (submit)="onSubmit()" >
+        <div class="form-group">
+            <label for="type"><b>Vehicle Type</b></label>
+            <select class="form-control" id="type" formControlName="type" required style="width:250px ; margin-left: 550px;">
+                <option value="">Select Vehicle Type</option>
+                <option value="Car">Car</option>
+                <option value="Bike">Bike</option>
+                <option value="Bus">Bus</option>
+                <option value="Van">Van</option>
+                <option value="Three-Wheel-Vehicle">Three-Wheel-Vehicle</option>
+         
+            </select>
+            <div *ngIf="f['type'].touched && f['type'].invalid" class="alert alert-danger" style="width:250px;margin-left: 550px">
+                <div *ngIf="f['type'].errors && f['type'].errors['required']">type is required.</div>
+          </div>
+        </div>
+
+             <div class="form-group">
+            <label for="number"><b>Vehicle Number</b></label>
+            <input type="text" class="form-control" id="number" formControlName="number" placeholder="Vehicle Number" required style="width:250px ;margin-left: 550px">
+               <div *ngIf="f['number'].touched && f['number'].invalid" class="alert alert-danger" style="width:250px;margin-left: 550px">
+                <div *ngIf="f['number'].errors && f['number'].errors['required']">number is required.</div>
+          </div>
+            </div>
+         <br>
+            <div class="form-group">
+                <label for="image"><b>Vehicle Image</b></label>
+                <br>
+            <img width="200px" height="250px" class="img-account-profile rounded-circle mb-3" src="https://www.vhv.rs/dpng/d/52-520651_default-car-image-png-transparent-png.png" alt="">
+            <input   (change)="onFileSelect($event)" formControlName="ads" type="file" required />
+         
+         </div>
+        <button type="submit" class="btn btn-danger">Submit</button>
+    </form>
+</div> 
+</div>

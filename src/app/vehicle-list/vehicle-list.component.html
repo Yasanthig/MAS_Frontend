@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-3">
+    <app-dashboard></app-dashboard>
+  </div>
+  <div class="col-9" style="margin-left: 350px;">
+
+<br>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<a class="float-lg-right" routerLink="/vehicle-upload"><button class="btn btn-success">Add New Vehicle</button></a>
+<div class="container">
+    <br>
+    <div class="row heading heading-icon">
+      <h2>Our Vehicles</h2>
+  </div>
+	<br>
+	<div class="row" id="ads" >
+    <!-- Category Card -->
+    <div class="col-md-4" *ngFor="let v of vehicleList">
+        <div class="card rounded" style="margin: 30px; width: 300px;" >
+            <div class="card-image">
+                <span class="card-notify-badge">{{v.number}}</span>
+                <img class="img-fluid" src="{{v.image}}" width="740px"height="362px" alt="Alternate Text" />
+            </div>
+            <div class="card-image-overlay m-auto">
+                <span *ngFor="let dates of v.reservedDates" class="card-detail-badge">{{dates}}</span>
+            </div>
+            <div class="card-body text-center">
+                <div class="ad-title m-auto">
+                    <h5>{{v.type}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

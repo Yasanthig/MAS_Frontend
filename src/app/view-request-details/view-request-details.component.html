@@ -1,0 +1,167 @@
+<div class="col-3">
+    <app-dashboard></app-dashboard>
+  </div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+<div class="container">
+    <div class="team-single">
+        <div class="row" >
+            <div class="col-lg-4 col-md-5 xs-margin-30px-bottom">
+                <div class="team-single-img">
+                    <img src="{{this.searchedRequest.user_image}}" alt="">
+                </div>
+                <div class="bg-light-gray padding-30px-all md-padding-25px-all sm-padding-20px-all text-center">
+                    <h4 class="margin-10px-bottom font-size24 md-font-size22 sm-font-size20 font-weight-600">{{this.searchedRequest.username}}</h4>
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-md-7">
+                <div class="team-single-text padding-50px-left sm-no-padding-left">
+                    <h4 class="font-size38 sm-font-size32 xs-font-size30">Request Details</h4>
+                    <div class="contact-info-section margin-40px-tb">
+                        <ul class="list-style9 no-margin">
+                            <li>
+
+                                <div class="row">
+                                    <div class="col-md-5 col-5">
+                                        <strong class="margin-10px-left text-orange">Reason :</strong>
+                                    </div>
+                                    <div class="col-md-7 col-7">
+                                        <p>{{this.searchedRequest.reason}}</p>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li>
+
+                                <div class="row">
+                                    <div class="col-md-5 col-5">
+                                        <strong class="margin-10px-left text-yellow">Date of Trip :</strong>
+                                    </div>
+                                    <div class="col-md-7 col-7">
+                                        <p>{{this.searchedRequest.dateOfTrip}}</p>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li>
+
+                                <div class="row">
+                                    <div class="col-md-5 col-5">
+                                        <strong class="margin-10px-left text-lightred">Time of Trip :</strong>
+                                    </div>
+                                    <div class="col-md-7 col-7">
+                                        <p>{{this.searchedRequest.timeOfTrip}}</p>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li>
+
+                                <div class="row">
+                                    <div class="col-md-5 col-5">
+                                        <strong class="margin-10px-left text-green"> From :</strong>
+                                    </div>
+                                    <div class="col-md-7 col-7">
+                                        <p>{{this.searchedRequest.locationFrom}}</p>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li>
+
+                                <div class="row">
+                                    <div class="col-md-5 col-5">
+                                        <strong class="margin-10px-left xs-margin-four-left text-purple"> To :</strong>
+                                    </div>
+                                    <div class="col-md-7 col-7">
+                                        <p>{{this.searchedRequest.locationTo}}</p>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li>
+
+                                <div class="row">
+                                    <div class="col-md-5 col-5">
+                                        <strong class="margin-10px-left xs-margin-four-left text-purple"> Time :</strong>
+                                    </div>
+                                    <div class="col-md-7 col-7">
+                                        <p>{{this.searchedRequest.time}}</p>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li>
+
+                                <div class="row">
+                                    <div class="col-md-5 col-5">
+                                        <strong class="margin-10px-left xs-margin-four-left text-purple"> Distance :</strong>
+                                    </div>
+                                    <div class="col-md-7 col-7">
+                                        <p>{{this.searchedRequest.distance}}</p>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-5 col-5">
+                                        <strong class="margin-10px-left xs-margin-four-left text-pink">Status:</strong>
+                                    </div>
+                                    <div class="col-md-7 col-7">
+                                        <p>{{this.searchedRequest.status}}</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-md-5 col-5">
+                                            <strong class="margin-10px-left xs-margin-four-left text-green">assignedDriver:</strong>
+                                        </div>
+                                        <div class="col-md-7 col-7">
+                                            <p>{{this.searchedRequest.assignedDriver}}</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-5 col-5">
+                                                <strong class="margin-10px-left xs-margin-four-left text-orange">assignedVehicle:</strong>
+                                            </div>
+                                            <div class="col-md-7 col-7">
+                                                <p>{{this.searchedRequest.assignedVehicle}}</p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-5 col-5">
+                                                <strong class="margin-10px-left xs-margin-four-left text-purple">Driver Accepted :</strong>
+                                            </div>
+                                            <div class="col-md-7 col-7">
+                                                <p>{{this.searchedRequest.isDriverAccepted}}</p>
+
+                                            </div>
+                                        </div>
+                                    </li>
+
+                            <li>    
+                                <div class="row" *ngIf="auth.mngLoggedIn()">
+                                    <div class="col-md-5 col-5">
+                                        <button class="btn btn-success" (click)="approveRequest()">Approve</button>
+                                    </div>
+                                    <div class="col-md-7 col-7">
+                                        <button class="btn btn-danger" (click)="rejectRequest()">Reject</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
